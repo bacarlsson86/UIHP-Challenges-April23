@@ -50,13 +50,11 @@ function createVDOM() {
 }
 
 function updateDOM() {
-  document.activeElement === jsInput ? (isFocus = true) : (isFocus = false);
+  document.activeElement === document.querySelector('input') ? (isFocus = true) : (isFocus = false);
   vDOM = createVDOM();
-  jsInput = convert(vDOM[0]);
-  jsDiv = convert(vDOM[1]);
   elems = vDOM.map(node => convert(node));
-  document.body.replaceChildren(jsInput, ...elems);
-  if(isFocus) jsInput.focus()
+  document.body.replaceChildren(...elems);
+  if (isFocus) elems[0].focus();
 }
 
 function convert(node) {
