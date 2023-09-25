@@ -53,10 +53,12 @@ function updateData(value, label) {
 
 updateDOM();
 
+// for some reason this doesn't update the display
 function findDiff(prevVDOM, currentVDOM) {
     for (let i = 0; i < currentVDOM.length; i++) {
         if(JSON.stringify(prevVDOM[i]) !== JSON.stringify(currentVDOM[i])){
             // change the actual DOM element related to that vDOM element!
+            // there's something wrong here
             elems[i].textContent = currentVDOM[i][1];
             elems[i].value = current[i][1];
         }
