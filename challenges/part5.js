@@ -59,6 +59,7 @@ function findDiff(prevVDOM, currentVDOM) {
         if(JSON.stringify(prevVDOM[i]) !== JSON.stringify(currentVDOM[i])){
             // change the actual DOM element related to that vDOM element!
             // there's something wrong here
+            // i'm still working on it
             elems[i].textContent = currentVDOM[i][1];
             elems[i].value = current[i][1];
         }
